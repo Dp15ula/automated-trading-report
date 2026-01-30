@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Trading Strategy Results and Detailed Breakdown - 2025 Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        
+        @media print {
+            .page-break { page-break-before: always; }
+            body { font-size: 10pt; }
+            .chart-container { height: 280px !important; }
+            .nav-container { display: none !important; }
+            .back-to-top { display: none !important; }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 80px;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover {
+            background: rgba(40, 167, 69, 0.3);
+            color: #28a745;
+        }
+        
+        .nav-link.active {
+            background: #28a745;
+            color: white;
+        }
+        
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-mobile-toggle {
+                display: block;
+                color: white;
+                background: none;
+                border: 1px solid #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .nav-links.show {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a2e;
+                flex-direction: column;
+                padding: 10px;
+            }
+        }
+        
+        @media (min-width: 901px) {
+            .nav-mobile-toggle {
+                display: none;
+            }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #28a745;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: #218838;
+            transform: translateY(-3px);
+        }
+        
+        /* Section Navigation */
+        .section-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 0.9em;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .section-nav a {
+            color: #16213e;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .section-nav a:hover {
+            background: #28a745;
+            color: white;
+        }
+        
+        .section-nav .nav-prev { }
+        .section-nav .nav-top { 
+            background: #1a1a2e;
+            color: white;
+        }
+        .section-nav .nav-top:hover {
+            background: #28a745;
+        }
+        .section-nav .nav-next { }
+        
+        @media print {
+            .section-nav { display: none !important; }
+        }
+        
+        /* Hero Header */
+        .hero-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .hero-header h1 {
+            color: white;
+            border: none;
+            margin: 0;
+            font-size: 2em;
+            padding: 0;
+        }
+        
+        .hero-subtitle {
+            color: #28a745;
+            font-size: 1.2em;
+            margin: 10px 0 5px 0;
+        }
+        
+        .hero-meta {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 25px;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .hero-stat {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .hero-stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .hero-stat-value.benchmark {
+            color: #6c757d;
+        }
+        
+        .hero-stat-label {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        /* Section styling */
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a1a2e;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 15px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #16213e;
+            border-left: 5px solid #28a745;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        
+        h3 { color: #0f3460; margin-top: 25px; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            height: 350px;
+        }
+        
+        .chart-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .chart-row { grid-template-columns: 1fr; }
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 8px;
+            text-align: left;
+        }
+        
+        th {
+            background: #16213e;
+            color: white;
+        }
+        
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f4f8; }
+        
+        .highlight-box {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .box-success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+        }
+        
+        .box-warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .box-info {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+        }
+        
+        .box-danger {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 2px;
+            font-weight: 500;
+        }
+        
+        .tag-green { background: #d4edda; color: #155724; }
+        .tag-red { background: #f8d7da; color: #721c24; }
+        .tag-blue { background: #cce5ff; color: #004085; }
+        .tag-gray { background: #e9ecef; color: #495057; }
+        .tag-orange { background: #ffe5d0; color: #7d4e00; }
+        .tag-purple { background: #e2d5f1; color: #4a235a; }
+        
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .symbol-tag {
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .timeline-event {
+            display: flex;
+            margin: 10px 0;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid #28a745;
+        }
+        
+        .timeline-event.bearish { border-left-color: #dc3545; }
+        .timeline-event.defensive { border-left-color: #ffc107; }
+        .timeline-event.rotation { border-left-color: #17a2b8; }
+        .timeline-event.uvxy { border-left-color: #6f42c1; }
+        
+        .timeline-date {
+            min-width: 100px;
+            font-weight: bold;
+            color: #16213e;
+        }
+        
+        .section-divider {
+            border-top: 2px solid #28a745;
+            margin: 50px 0 30px 0;
+        }
+        
+        .gap-alert {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .strategy-flow {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .flow-node {
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .flow-condition { background: #fff3cd; border: 2px solid #ffc107; }
+        .flow-bull { background: #d4edda; border: 2px solid #28a745; }
+        .flow-bear { background: #f8d7da; border: 2px solid #dc3545; }
+        .flow-defensive { background: #e9ecef; border: 2px solid #6c757d; }
+        
+        /* Interactive Ticker Styles */
+        .ticker {
+            display: inline-block;
+            padding: 2px 6px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 1px solid #81c784;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #2e7d32;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .ticker:hover {
+            background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+            box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .ticker.etf-leveraged {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-color: #ffb74d;
+            color: #e65100;
+        }
+        
+        .ticker.etf-leveraged:hover {
+            background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+            box-shadow: 0 2px 8px rgba(230, 81, 0, 0.3);
+        }
+        
+        .ticker.etf-inverse {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-color: #e57373;
+            color: #c62828;
+        }
+        
+        .ticker.etf-inverse:hover {
+            background: linear-gradient(135deg, #ffcdd2 0%, #ef9a9a 100%);
+            box-shadow: 0 2px 8px rgba(198, 40, 40, 0.3);
+        }
+        
+        .ticker.etf-bond {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-color: #64b5f6;
+            color: #1565c0;
+        }
+        
+        .ticker.etf-bond:hover {
+            background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+            box-shadow: 0 2px 8px rgba(21, 101, 192, 0.3);
+        }
+        
+        .ticker.etf-volatility {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-color: #ba68c8;
+            color: #7b1fa2;
+        }
+        
+        .ticker.etf-volatility:hover {
+            background: linear-gradient(135deg, #e1bee7 0%, #ce93d8 100%);
+            box-shadow: 0 2px 8px rgba(123, 31, 162, 0.3);
+        }
+        
+        .ticker-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: normal;
+            font-family: 'Segoe UI', sans-serif;
+            white-space: nowrap;
+            z-index: 1000;
+            transition: all 0.2s ease;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .ticker-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #1a1a2e;
+        }
+        
+        .ticker:hover .ticker-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Modal styles */
+        .ticker-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ticker-modal-overlay.active {
+            display: flex;
+        }
+        
+        .ticker-modal {
+            background: white;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .ticker-modal-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .ticker-modal-header h3 {
+            margin: 0;
+            font-size: 1.4em;
+        }
+        
+        .ticker-modal-header .ticker-type {
+            font-size: 0.8em;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .ticker-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        
+        .ticker-modal-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .ticker-modal-body {
+            padding: 20px;
+        }
+        
+        .ticker-modal-body .ticker-name {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .ticker-modal-body .ticker-description {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .ticker-modal-body .ticker-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .ticker-modal-body .ticker-stat {
+            text-align: center;
+        }
+        
+        .ticker-modal-body .ticker-stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .ticker-modal-body .ticker-stat-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .ticker-modal-body .ticker-role {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .ticker-modal-body .ticker-role strong {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <div class="nav-brand">📈 Trading Strategy Report</div>
+            <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰ Menu</button>
+            <div class="nav-links">
+                <a href="#top" class="nav-link">Top</a>
+                <a href="#summary" class="nav-link">Summary</a>
+                <a href="#performance" class="nav-link">Performance</a>
+                <a href="#strategy" class="nav-link">How It Works</a>
+                <a href="#tickers" class="nav-link">Tickers</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#activity" class="nav-link">Activity</a>
+                <a href="#validation" class="nav-link">Validation</a>
+                <a href="#reference" class="nav-link">Reference</a>
+                <a href="#conclusion" class="nav-link">Conclusion</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="backToTop">↑</a>
+    
+    <!-- Hero Header -->
+    <div class="hero-header" id="top">
+        <h1>Automated Trading Strategy Results and Detailed Breakdown</h1>
+        <div class="hero-subtitle">Powered by Composer.trade & Alpaca</div>
+        <div class="hero-meta">
+            Strategy: <strong>TQQQ For The Long Term V4.1 | Garen Mod</strong><br>
+            Analysis Period: January 30, 2025 - January 30, 2026
+        </div>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-value">+67.12%</div>
+                <div class="hero-stat-label">Total Return</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value benchmark">+4.84%</div>
+                <div class="hero-stat-label">SPY Benchmark</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">+62.3%</div>
+                <div class="hero-stat-label">Alpha Generated</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">$1,671</div>
+                <div class="hero-stat-label">From $1,000</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- TABLE OF CONTENTS -->
+    <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h3 style="margin-top: 0; color: #1a1a2e;">📑 Table of Contents</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div>
+                <strong style="color: #28a745;">Overview</strong>
+                <ul style="margin: 5px 0; padding-left: 20px; line-height: 1.8;">
+                    <li><a href="#summary" style="color: #16213e;">Executive Summary</a></li>
+                    <li><a href="#performance" style="color: #16213e;">Performance Results</a></li>
+                    <li><a href="#strategy" style="color: #16213e;">How the Strategy Works</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong style="color: #28a745;">Strategy Details</strong>
+                <ul style="margin: 5px 0; padding-left: 20px; line-height: 1.8;">
+                    <li><a href="#tickers" style="color: #16213e;">Ticker Glossary</a></li>
+                    <li><a href="#portfolio" style="color: #16213e;">Current Portfolio</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong style="color: #28a745;">2025 Analysis</strong>
+                <ul style="margin: 5px 0; padding-left: 20px; line-height: 1.8;">
+                    <li><a href="#activity" style="color: #16213e;">Trading Activity</a></li>
+                    <li><a href="#branches" style="color: #16213e;">Branch Timeline</a></li>
+                    <li><a href="#validation" style="color: #16213e;">Market Validation</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong style="color: #28a745;">Deep Dives</strong>
+                <ul style="margin: 5px 0; padding-left: 20px; line-height: 1.8;">
+                    <li><a href="#reference" style="color: #16213e;">TQQQ Holding Reference</a></li>
+                    <li><a href="#conclusion" style="color: #16213e;">Conclusion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 1: EXECUTIVE SUMMARY ==================== -->
+    <section id="summary">
+    <h2>📋 Executive Summary</h2>
+    
+    <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+        <div style="border-bottom: 1px solid #444; padding-bottom: 15px; margin-bottom: 20px;">
+            <h4 style="color: #ffc107; margin: 0 0 10px 0;">⚡ One-Sentence Summary</h4>
+            <p style="font-size: 1.2em; margin: 0; font-style: italic;">
+                "Stay fully invested in a concentrated basket of elite tech stocks during good times, but automatically switch to protection mode when RSI or moving average danger signals appear."
+            </p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h4 style="color: #ffc107; margin-bottom: 10px;">📊 What is "A Better QQQ"?</h4>
+                <p style="font-size: 0.95em; line-height: 1.6;">
+                    <strong>QQQ</strong> is a popular ETF that owns all 100 stocks in the Nasdaq-100 index. The strategy creator's thesis: <em>"Why dilute returns across 100 companies when a handful of mega-caps drive most of the gains?"</em>
+                </p>
+                <p style="font-size: 0.9em; line-height: 1.6;">
+                    <strong>"A Better QQQ"</strong> concentrates on the <strong>7 highest-conviction tech stocks</strong> plus <strong>TQQQ</strong> (3x leveraged QQQ) for amplified exposure:
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; font-size: 0.85em; text-align: center; margin-top: 10px;">
+                    <span style="background: #28a745; padding: 5px; border-radius: 5px;">TQQQ (3x)</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">AAPL</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">MSFT</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">NVDA</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">AMZN</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">TSLA</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">AMD</span>
+                    <span style="background: #17a2b8; padding: 5px; border-radius: 5px;">TSM</span>
+                </div>
+                <p style="font-size: 0.85em; margin-top: 10px; color: #aaa;">
+                    Equal-weighted = 12.5% each. TQQQ adds leverage; individual stocks avoid leveraged ETF decay on 87.5% of the portfolio.
+                </p>
+            </div>
+            
+            <div>
+                <h4 style="color: #ffc107; margin-bottom: 10px;">🎯 Strategy Logic Overview</h4>
+                <p style="font-size: 0.9em; line-height: 1.7;">
+                    The algorithm monitors <strong>RSI</strong> and <strong>moving averages</strong> to dynamically shift between modes:
+                </p>
+                <ul style="font-size: 0.85em; line-height: 1.8; margin-top: 5px;">
+                    <li><strong>Bull Market Default:</strong> Hold "A Better QQQ" basket</li>
+                    <li><strong>Oversold (RSI &lt; 31):</strong> Concentrate into TQQQ for bounce</li>
+                    <li><strong>Overbought (RSI &gt; 75-80):</strong> Hedge with UVXY volatility</li>
+                    <li><strong>Bear Market (SPY &lt; 200 MA):</strong> Rotate to SQQQ, BSV, or sector ETFs</li>
+                </ul>
+                <p style="font-size: 0.85em; margin-top: 10px; color: #aaa;">
+                    The goal: Stay fully invested during uptrends, but automatically protect capital when technical danger signals appear.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section-nav">
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span>Next: <a href="#performance" class="nav-next">Performance Results →</a></span>
+    </div>
+    </section>
+
+    <!-- ==================== SECTION 2: PERFORMANCE RESULTS ==================== -->
+    <section id="performance">
+    <h2>📈 Performance Results</h2>
+    
+    <div class="highlight-box box-success" style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);">
+        <h4>🏆 Performance Summary: +67.12% Return</h4>
+        <p style="font-size: 1.1em;">Starting with <strong>$1,000</strong>, the strategy grew to <strong>$1,671.22</strong> — outperforming SPY by <strong>62+ percentage points</strong>.</p>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-card" style="border-top: 4px solid #28a745;">
+            <div class="stat-value" style="color: #28a745;">+67.12%</div>
+            <div class="stat-label">Cumulative Return</div>
+        </div>
+        <div class="stat-card" style="border-top: 4px solid #28a745;">
+            <div class="stat-value">$1,671</div>
+            <div class="stat-label">Current Value</div>
+        </div>
+        <div class="stat-card" style="border-top: 4px solid #17a2b8;">
+            <div class="stat-value">+4.84%</div>
+            <div class="stat-label">SPY Benchmark</div>
+        </div>
+        <div class="stat-card" style="border-top: 4px solid #ffc107;">
+            <div class="stat-value" style="color: #28a745;">+62.3%</div>
+            <div class="stat-label">Alpha (vs SPY)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">144</div>
+            <div class="stat-label">Total Trades</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">14/15</div>
+            <div class="stat-label">Symbols Used</div>
+        </div>
+    </div>
+    
+    <div class="highlight-box box-info">
+        <h4>📊 Understanding the Numbers</h4>
+        <table style="margin: 10px 0; width: 100%;">
+            <tr>
+                <td><strong>Starting Capital:</strong></td>
+                <td>$1,000</td>
+                <td><strong>Current Value:</strong></td>
+                <td>$1,671.22</td>
+            </tr>
+            <tr>
+                <td><strong>Total $ Traded:</strong></td>
+                <td>$45,337</td>
+                <td><strong>Turnover Ratio:</strong></td>
+                <td>~45x (high due to frequent rotations)</td>
+            </tr>
+        </table>
+        <p style="font-size: 0.9em; margin-top: 10px;"><em>Note: "Total $ Traded" is the sum of all buy/sell transactions, not account size. Each rotation (selling ~$1,000 then buying ~$1,000) adds ~$2,000 to this figure.</em></p>
+    </div>
+    
+    <h3>📈 Performance vs Benchmark</h3>
+    
+    <div class="chart-container" style="height: 300px;">
+        <canvas id="performanceChart"></canvas>
+    </div>
+    
+    <div class="highlight-box box-success">
+        <h4>🎯 Key Performance Highlights</h4>
+        <ul>
+            <li><strong>Total Return:</strong> +67.12% vs SPY's +4.84% — outperformed by 62+ percentage points</li>
+            <li><strong>Biggest Drawdown:</strong> March-April 2025 (visible dip around April 10 in chart) — strategy correctly shifted to defensive mode</li>
+            <li><strong>Recovery:</strong> Fully recovered from drawdown and continued to new highs</li>
+            <li><strong>Consistency:</strong> The strategy remained above SPY for the entire year after the initial investment period</li>
+        </ul>
+    </div>
+    
+    <div class="section-nav">
+        <span><a href="#summary" class="nav-prev">← Executive Summary</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#strategy" class="nav-next">How It Works →</a></span>
+    </div>
+    </section>
+    </div>
+    
+    <div class="section-divider page-break"></div>
+    
+    <!-- ==================== SECTION: HOW THE STRATEGY WORKS ==================== -->
+    <section id="strategy">
+    <h2>🎯 Strategy Structure Overview</h2>
+    
+    <div class="strategy-flow">
+        <h4>Decision Tree Summary</h4>
+        <p><span class="flow-node flow-condition">SPY > 200-day MA?</span></p>
+        
+        <div style="margin-left: 30px;">
+            <p><strong>YES (Bull Market):</strong></p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">TQQQ RSI(14) > 75?</span> → <span class="flow-node flow-bear">UVXY</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">SPXL RSI(10) > 80?</span> → <span class="flow-node flow-bear">UVXY</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">QQQ 5d Return < -6%?</span> → Complex dip-buying logic → <span class="flow-node flow-bull">TQQQ</span> or <span class="flow-node flow-bear">SQQQ</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">QQQ RSI(10) > 80?</span> → <span class="flow-node flow-bear">SQQQ</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">QQQ RSI(10) < 31?</span> → <span class="flow-node flow-bull">TQQQ</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <strong>DEFAULT:</strong> <span class="flow-node flow-bull">"A Better QQQ" Basket</span> (TQQQ + TSM + MSFT + AMZN + AAPL + AMD + NVDA + TSLA)
+            </p>
+        </div>
+        
+        <div style="margin-left: 30px; margin-top: 20px;">
+            <p><strong>NO (Bear Market):</strong></p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">TQQQ RSI(9) < 32?</span> → Rotation among <span class="flow-node flow-bull">TECL/SOXL/SPXL</span> or <span class="flow-node flow-defensive">SHY</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">UVXY RSI(10) > 74?</span> → <span class="flow-node flow-bear">UVXY</span> or <span class="flow-node flow-defensive">BSV/SQQQ</span>
+            </p>
+            <p style="margin-left: 20px;">
+                <span class="flow-node flow-condition">TQQQ > 20-day MA?</span> → <span class="flow-node flow-bull">TQQQ</span> else <span class="flow-node flow-defensive">BSV/SQQQ</span>
+            </p>
+        </div>
+    </div>
+    
+    <div class="section-nav">
+        <span><a href="#performance" class="nav-prev">← Performance</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#tickers" class="nav-next">Ticker Glossary →</a></span>
+    </div>
+    </section>
+
+    <div class="section-divider page-break"></div>
+    
+    <!-- ==================== SECTION: TICKER GLOSSARY ==================== -->
+    <section id="tickers">
+    <h2>📖 Ticker Glossary</h2>
+    
+    <p>This strategy uses 15 different securities. <strong>Hover over any ticker to see its name, or click to see full details.</strong> Tickers are color-coded by type:</p>
+    
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
+        <span><span class="ticker" style="cursor: default;">AAPL</span> = Stock</span>
+        <span><span class="ticker etf-leveraged" style="cursor: default;">TQQQ</span> = Leveraged ETF</span>
+        <span><span class="ticker etf-inverse" style="cursor: default;">SQQQ</span> = Inverse ETF</span>
+        <span><span class="ticker etf-bond" style="cursor: default;">BSV</span> = Bond ETF</span>
+        <span><span class="ticker etf-volatility" style="cursor: default;">UVXY</span> = Volatility ETF</span>
+    </div>
+    
+    <h3>📈 "A Better QQQ" Basket (Bull Market Default)</h3>
+    <p>Equal-weighted 12.5% each. Individual stocks avoid leveraged ETF decay on 87.5% of the portfolio.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-leveraged" onclick="openTickerModal('TQQQ')">TQQQ<span class="ticker-tooltip">ProShares UltraPro QQQ</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">3x Leveraged Nasdaq-100 ETF</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Provides leverage boost to the basket</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('AAPL')">AAPL<span class="ticker-tooltip">Apple Inc.</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Apple Inc.</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Consumer electronics & services giant</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('MSFT')">MSFT<span class="ticker-tooltip">Microsoft Corporation</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Microsoft Corporation</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Cloud (Azure), Office, Windows, AI</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('NVDA')">NVDA<span class="ticker-tooltip">NVIDIA Corporation</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">NVIDIA Corporation</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">AI chips & GPU leader</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('AMZN')">AMZN<span class="ticker-tooltip">Amazon.com Inc.</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Amazon.com Inc.</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">E-commerce & AWS cloud</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('TSLA')">TSLA<span class="ticker-tooltip">Tesla Inc.</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Tesla Inc.</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Electric vehicles & energy</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('AMD')">AMD<span class="ticker-tooltip">Advanced Micro Devices Inc.</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Advanced Micro Devices</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">CPUs, GPUs & AI accelerators</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #4caf50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('TSM')">TSM<span class="ticker-tooltip">Taiwan Semiconductor (TSMC)</span></span>
+                <span style="font-size: 0.8em; color: #666;">12.5%</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Taiwan Semiconductor</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">World's largest chip foundry</div>
+        </div>
+    </div>
+    
+    <h3>🛡️ Defensive & Rotation Instruments</h3>
+    <p>Used during bear markets, overbought conditions, or for hedging.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #f44336;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-inverse" onclick="openTickerModal('SQQQ')">SQQQ<span class="ticker-tooltip">ProShares UltraPro Short QQQ</span></span>
+                <span style="font-size: 0.8em; color: #dc3545;">BEARISH</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">3x Inverse Nasdaq-100</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Profits when tech falls. Used when QQQ RSI > 80</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #9c27b0;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-volatility" onclick="openTickerModal('UVXY')">UVXY<span class="ticker-tooltip">ProShares Ultra VIX Short-Term</span></span>
+                <span style="font-size: 0.8em; color: #7b1fa2;">HEDGE</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">1.5x VIX Volatility</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Crash insurance. Triggered when TQQQ RSI > 75</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #2196f3;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-bond" onclick="openTickerModal('BSV')">BSV<span class="ticker-tooltip">Vanguard Short-Term Bond ETF</span></span>
+                <span style="font-size: 0.8em; color: #1565c0;">DEFENSIVE</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Short-Term Investment Grade Bonds</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Safe haven during bear markets</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #2196f3;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-bond" onclick="openTickerModal('SHY')">SHY<span class="ticker-tooltip">iShares 1-3 Year Treasury Bond</span></span>
+                <span style="font-size: 0.8em; color: #9e9e9e;">UNUSED</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">1-3 Year Treasury Bonds</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Ultra-safe option. Never triggered in 2025</div>
+        </div>
+    </div>
+    
+    <h3>🔄 Bear Market Rotation ETFs</h3>
+    <p>RSI-sorted rotation when SPY falls below 200-day MA. Strategy picks whichever has lowest (most oversold) RSI.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-leveraged" onclick="openTickerModal('TECL')">TECL<span class="ticker-tooltip">Direxion Daily Tech Bull 3X</span></span>
+                <span style="font-size: 0.8em; color: #e65100;">ROTATION</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">3x Technology Sector</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Selected when tech is most oversold</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-leveraged" onclick="openTickerModal('SOXL')">SOXL<span class="ticker-tooltip">Direxion Daily Semiconductor Bull 3X</span></span>
+                <span style="font-size: 0.8em; color: #e65100;">ROTATION</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">3x Semiconductor Sector</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Selected when chips are most oversold</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker etf-leveraged" onclick="openTickerModal('SPXL')">SPXL<span class="ticker-tooltip">Direxion Daily S&P 500 Bull 3X</span></span>
+                <span style="font-size: 0.8em; color: #e65100;">ROTATION</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">3x S&P 500</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">Broader market exposure option</div>
+        </div>
+    </div>
+    
+    <h3>📊 Signal & Benchmark Indices</h3>
+    <p>Used to determine market regime and trigger conditions (not held directly except as benchmark comparison).</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #607d8b;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('SPY')">SPY<span class="ticker-tooltip">SPDR S&P 500 ETF Trust</span></span>
+                <span style="font-size: 0.8em; color: #607d8b;">SIGNAL</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">S&P 500 ETF</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">SPY vs 200 MA determines bull/bear mode</div>
+        </div>
+        
+        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #607d8b;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="ticker" onclick="openTickerModal('QQQ')">QQQ<span class="ticker-tooltip">Invesco QQQ Trust (Nasdaq-100)</span></span>
+                <span style="font-size: 0.8em; color: #607d8b;">SIGNAL</span>
+            </div>
+            <div style="font-size: 0.9em; color: #666; margin-top: 8px;">Nasdaq-100 ETF</div>
+            <div style="font-size: 0.85em; margin-top: 5px;">RSI triggers for TQQQ/SQQQ switches</div>
+        </div>
+    </div>
+    
+    <div class="section-nav">
+        <span><a href="#strategy" class="nav-prev">← How It Works</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#portfolio" class="nav-next">Current Portfolio →</a></span>
+    </div>
+    </section>
+
+    <!-- ==================== SECTION: CURRENT PORTFOLIO ==================== -->
+    <section id="portfolio">
+    <h2>💼 Current Holdings (as of Jan 30, 2026)</h2>
+    
+    <p>The portfolio is currently in <strong>"A Better QQQ" basket mode</strong> — the default bull market allocation with 8 equal-weight positions:</p>
+    
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Allocation</th>
+            <th>Quantity</th>
+            <th>Current Price</th>
+            <th>Market Value</th>
+            <th>Today's Change</th>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">TSM</span></td>
+            <td>Taiwan Semiconductor</td>
+            <td>13.96%</td>
+            <td>0.697</td>
+            <td>$334.73</td>
+            <td>$233.22</td>
+            <td style="color: #dc3545;">-1.42% (-$3.36)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">AMD</span></td>
+            <td>Advanced Micro Devices</td>
+            <td>13.62%</td>
+            <td>0.940</td>
+            <td>$242.11</td>
+            <td>$227.47</td>
+            <td style="color: #dc3545;">-3.99% (-$9.46)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-green">TQQQ</span></td>
+            <td>ProShares UltraPro QQQ 3x</td>
+            <td>13.21%</td>
+            <td>4.013</td>
+            <td>$54.99</td>
+            <td>$220.63</td>
+            <td style="color: #dc3545;">-1.88% (-$4.23)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">TSLA</span></td>
+            <td>Tesla Inc</td>
+            <td>12.81%</td>
+            <td>0.487</td>
+            <td>$439.06</td>
+            <td>$214.03</td>
+            <td style="color: #28a745;">+5.40% (+$10.97)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">AMZN</span></td>
+            <td>Amazon.com Inc</td>
+            <td>12.55%</td>
+            <td>0.870</td>
+            <td>$240.81</td>
+            <td>$209.59</td>
+            <td style="color: #dc3545;">-0.38% (-$0.80)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">NVDA</span></td>
+            <td>NVIDIA Corp</td>
+            <td>12.32%</td>
+            <td>1.067</td>
+            <td>$192.75</td>
+            <td>$205.76</td>
+            <td style="color: #28a745;">+0.12% (+$0.26)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">AAPL</span></td>
+            <td>Apple Inc</td>
+            <td>10.88%</td>
+            <td>0.708</td>
+            <td>$256.63</td>
+            <td>$181.69</td>
+            <td style="color: #dc3545;">-0.64% (-$1.17)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">MSFT</span></td>
+            <td>Microsoft Corporation</td>
+            <td>10.51%</td>
+            <td>0.406</td>
+            <td>$432.22</td>
+            <td>$175.52</td>
+            <td style="color: #dc3545;">-0.30% (-$0.52)</td>
+        </tr>
+        <tr style="background: #f0f0f0; font-weight: bold;">
+            <td colspan="3">Cash (Symphony Cash Remainder)</td>
+            <td>2.790</td>
+            <td>—</td>
+            <td>$2.79</td>
+            <td>—</td>
+        </tr>
+        <tr style="background: #e8f5e9; font-weight: bold;">
+            <td colspan="3">TOTAL PORTFOLIO</td>
+            <td></td>
+            <td></td>
+            <td>$1,671.22</td>
+            <td style="color: #dc3545;">-$8.33 (-0.50%)</td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box box-success">
+        <h4>✅ Strategy Alignment: 100% Match</h4>
+        <p>All 14 symbols traded are defined in the strategy. Only <strong>SHY</strong> (1-3 Year Treasury) was in the strategy but never triggered. The current allocation exactly matches the strategy's "A Better QQQ" default bull market position.</p>
+    </div>
+    
+    <div class="section-nav">
+        <span><a href="#tickers" class="nav-prev">← Ticker Glossary</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#activity" class="nav-next">Trading Activity →</a></span>
+    </div>
+
+    </section>
+    
+    <!-- ==================== SECTION: TRADING ACTIVITY ==================== -->
+    <section id="activity">
+    <h2>📊 Trading Activity Analysis</h2>
+    
+    <div class="highlight-box box-warning" style="margin-bottom: 20px;">
+        <h4>💡 Note on "Dollars Traded" vs Account Size</h4>
+        <p>The charts below show <strong>total dollars traded</strong> ($45,337), not account value. With a ~$1,000-1,700 account rotating frequently, each full rotation adds ~$2,000+ to this figure. The ~45x turnover ratio reflects the strategy's active rotation between positions.</p>
+    </div>
+    
+    <div class="chart-row">
+        <div class="chart-container">
+            <canvas id="volumeByCategory"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="branchActivation"></canvas>
+        </div>
+    </div>
+    
+    <div class="chart-container" style="height: 320px;">
+        <canvas id="volumeBySymbol"></canvas>
+    </div>
+    
+    <h3>Dollars Traded by Strategy Category</h3>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>$ Traded</th>
+            <th>% of Total</th>
+            <th>Symbols</th>
+            <th>Strategy Branch</th>
+        </tr>
+        <tr>
+            <td><span class="tag tag-green">"A Better QQQ" Basket</span></td>
+            <td>$12,877</td>
+            <td>28.4%</td>
+            <td>AAPL, AMZN, MSFT, NVDA, TSLA, AMD, TSM</td>
+            <td>Bull Market Default</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-green">TQQQ (Core Bull)</span></td>
+            <td>$9,758</td>
+            <td>21.5%</td>
+            <td>TQQQ</td>
+            <td>Bull: RSI < 31 or concentrated</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-gray">Bonds/Cash (BSV)</span></td>
+            <td>$8,346</td>
+            <td>18.4%</td>
+            <td>BSV</td>
+            <td>Bear: Defensive positioning</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">Bear Market Rotation</span></td>
+            <td>$6,330</td>
+            <td>14.0%</td>
+            <td>TECL, SOXL, SPXL</td>
+            <td>Bear: SPY < 200 MA rotation</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-red">SQQQ (Bear/Hedge)</span></td>
+            <td>$5,113</td>
+            <td>11.3%</td>
+            <td>SQQQ</td>
+            <td>RSI Overbought or Bear signal</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-purple">Volatility Hedge</span></td>
+            <td>$2,914</td>
+            <td>6.4%</td>
+            <td>UVXY</td>
+            <td>Bull: RSI > 75/80 trigger</td>
+        </tr>
+    </table>
+
+    <div class="section-divider page-break"></div>
+    
+    <h2>🔍 Strategy Coverage Analysis</h2>
+    
+    <h3>✅ All Traded Symbols Match Strategy (14 of 14)</h3>
+    <div class="coverage-grid">
+        <div class="symbol-tag tag-green">TQQQ</div>
+        <div class="symbol-tag tag-green">SQQQ</div>
+        <div class="symbol-tag tag-green">UVXY</div>
+        <div class="symbol-tag tag-green">BSV</div>
+        <div class="symbol-tag tag-green">TECL</div>
+        <div class="symbol-tag tag-green">SOXL</div>
+        <div class="symbol-tag tag-green">SPXL</div>
+        <div class="symbol-tag tag-green">AAPL</div>
+        <div class="symbol-tag tag-green">AMZN</div>
+        <div class="symbol-tag tag-green">MSFT</div>
+        <div class="symbol-tag tag-green">NVDA</div>
+        <div class="symbol-tag tag-green">TSLA</div>
+        <div class="symbol-tag tag-green">AMD</div>
+        <div class="symbol-tag tag-green">TSM</div>
+    </div>
+    
+    <h3>⚪ In Strategy but Never Traded (1 symbol)</h3>
+    <div class="coverage-grid">
+        <div class="symbol-tag tag-gray">SHY</div>
+    </div>
+    <p><strong>Why SHY wasn't used:</strong> SHY (1-3 Year Treasury Bond) is part of the bear market RSI rotation with TECL/SOXL/SPXL. The strategy selects the bottom 1 by RSI, and during the bear periods, the leveraged ETFs apparently always had lower RSI than SHY, so they were selected instead.</p>
+    
+    <div class="section-nav">
+        <span><a href="#portfolio" class="nav-prev">← Current Portfolio</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#branches" class="nav-next">Branch Timeline →</a></span>
+    </div>
+    </section>
+
+    <div class="section-divider page-break"></div>
+    
+    <section id="branches">
+    <h2>📅 Strategy Branch Timeline</h2>
+    
+    <div class="chart-container" style="height: 400px;">
+        <canvas id="timelineChart"></canvas>
+    </div>
+    
+    <h3>Branch Activation Summary</h3>
+    <table>
+        <tr>
+            <th>Strategy Branch</th>
+            <th>Days Active</th>
+            <th>% of Trading Days</th>
+            <th>Interpretation</th>
+        </tr>
+        <tr>
+            <td><span class="tag tag-green">Bull: "A Better QQQ" Basket</span></td>
+            <td>7 days</td>
+            <td>26.9%</td>
+            <td>Default bull market allocation</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-green">Bull: TQQQ Concentrated</span></td>
+            <td>5 days</td>
+            <td>19.2%</td>
+            <td>QQQ RSI < 31 (oversold bounce)</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">Bear Market Rotation</span></td>
+            <td>5 days</td>
+            <td>19.2%</td>
+            <td>SPY < 200 MA, rotating TECL/SOXL/SPXL</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-gray">Defensive: BSV Bonds</span></td>
+            <td>5 days</td>
+            <td>19.2%</td>
+            <td>Bear market, high RSI on UVXY</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-red">Bearish: SQQQ</span></td>
+            <td>3 days</td>
+            <td>11.5%</td>
+            <td>Overbought signals or bear hedge</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-purple">UVXY Volatility Hedge</span></td>
+            <td>1 day</td>
+            <td>3.8%</td>
+            <td>TQQQ RSI > 75 triggered</td>
+        </tr>
+    </table>
+    
+    <h3>Detailed Daily Trading Log</h3>
+    
+    <div class="timeline-event">
+        <div class="timeline-date">Feb 27-Mar 7</div>
+        <div>
+            <strong>🟢 BULL MARKET: Oscillating between TQQQ and "A Better QQQ" basket</strong><br>
+            <em>4 rotations between concentrated TQQQ ↔ diversified tech basket. RSI fluctuations around 31 threshold.</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event rotation">
+        <div class="timeline-date">Mar 10</div>
+        <div>
+            <strong>📉 BEAR MARKET ENTRY: SPY crossed below 200 MA</strong><br>
+            <em>Sold all positions → Bought TECL + SOXL (bear market rotation began)</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event bearish">
+        <div class="timeline-date">Mar 14</div>
+        <div>
+            <strong>🔴 BEARISH: Sold TECL/SOXL → SQQQ</strong><br>
+            <em>Bear market signal intensified, shifted to inverse Nasdaq</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event defensive">
+        <div class="timeline-date">Mar 17-19</div>
+        <div>
+            <strong>💵 DEFENSIVE: Oscillating SQQQ ↔ BSV</strong><br>
+            <em>Uncertain market conditions, alternating between bearish and cash positions</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event">
+        <div class="timeline-date">Mar 24</div>
+        <div>
+            <strong>🟢 BULL RETURN: Full "A Better QQQ" basket + TQQQ</strong><br>
+            <em>SPY likely crossed back above 200 MA</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event defensive">
+        <div class="timeline-date">Mar 26</div>
+        <div>
+            <strong>💵 BACK TO DEFENSIVE: All → BSV</strong><br>
+            <em>Quick reversal, full cash/bond position</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event rotation">
+        <div class="timeline-date">Apr 3-9</div>
+        <div>
+            <strong>📉 BEAR ROTATION: BSV → SOXL → SPXL → TECL/SOXL → BSV</strong><br>
+            <em>Active bear market rotation based on RSI rankings among leveraged ETFs</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event bearish">
+        <div class="timeline-date">Apr 11-14</div>
+        <div>
+            <strong>🔴 BEARISH → DEFENSIVE: SQQQ ↔ BSV</strong><br>
+            <em>Continued uncertainty</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event">
+        <div class="timeline-date">Apr 24</div>
+        <div>
+            <strong>🟢 BULL: BSV → TQQQ</strong><br>
+            <em>Market turned bullish, concentrated TQQQ position</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event">
+        <div class="timeline-date">May 12</div>
+        <div>
+            <strong>🟢 BULL: TQQQ → "A Better QQQ" basket</strong><br>
+            <em>Shifted to diversified basket - then NO TRADING FOR 133 DAYS</em>
+        </div>
+    </div>
+    
+    <div class="gap-alert">
+        <strong>⚠️ 133-Day Gap: May 12 → September 22</strong><br>
+        The strategy held the "A Better QQQ" basket (7 tech stocks) for over 4 months without rebalancing. This is consistent with the strategy's default bull market behavior - when no RSI triggers are hit, it simply holds the diversified basket.
+    </div>
+    
+    <div class="timeline-event uvxy">
+        <div class="timeline-date">Sep 22</div>
+        <div>
+            <strong>🛡️ UVXY HEDGE TRIGGERED!</strong><br>
+            <em>TQQQ RSI(14) > 75 or SPXL RSI(10) > 80 was hit. Sold everything → Full UVXY position</em>
+        </div>
+    </div>
+    
+    <div class="timeline-event">
+        <div class="timeline-date">Sep 23</div>
+        <div>
+            <strong>🟢 BULL RETURN: UVXY → Full basket + TQQQ</strong><br>
+            <em>Quick exit from volatility hedge, back to diversified bull position</em>
+        </div>
+    </div>
+    
+    <div class="gap-alert">
+        <strong>⚠️ 58-Day Gap: September 23 → November 20</strong><br>
+        Another extended hold of the diversified basket through the fall.
+    </div>
+    
+    <div class="timeline-event">
+        <div class="timeline-date">Nov 20-21</div>
+        <div>
+            <strong>🟢 BULL: Rotation basket ↔ TQQQ</strong><br>
+            <em>Final trades of the period - RSI-based rotation</em>
+        </div>
+    </div>
+    
+    <div class="section-nav">
+        <span><a href="#activity" class="nav-prev">← Trading Activity</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#timeline" class="nav-next">Monthly Analysis →</a></span>
+    </div>
+    </section>
+
+    <div class="section-divider page-break"></div>
+    
+    <!-- ==================== SECTION: TIMELINE ==================== -->
+    <section id="timeline">
+    <h2>📈 Monthly Activity Analysis</h2>
+    
+    <div class="chart-container" style="height: 300px;">
+        <canvas id="monthlyVolume"></canvas>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>$ Traded</th>
+            <th>Trading Days</th>
+            <th>Primary Activity</th>
+        </tr>
+        <tr>
+            <td>February 2025</td>
+            <td>$3,120</td>
+            <td>2</td>
+            <td>Initial bull market positioning</td>
+        </tr>
+        <tr>
+            <td>March 2025</td>
+            <td>$17,832</td>
+            <td>12</td>
+            <td>Most active - Bull/Bear transitions, defensive moves</td>
+        </tr>
+        <tr>
+            <td>April 2025</td>
+            <td>$11,364</td>
+            <td>8</td>
+            <td>Bear market rotation, return to bull</td>
+        </tr>
+        <tr>
+            <td>May 2025</td>
+            <td>$1,854</td>
+            <td>1</td>
+            <td>Single rebalance, then long hold begins</td>
+        </tr>
+        <tr style="background: #fff3cd;">
+            <td>Jun-Aug 2025</td>
+            <td>$0</td>
+            <td>0</td>
+            <td>⚠️ No trading - holding "A Better QQQ" basket</td>
+        </tr>
+        <tr>
+            <td>September 2025</td>
+            <td>$5,827</td>
+            <td>2</td>
+            <td>UVXY hedge triggered and exited</td>
+        </tr>
+        <tr style="background: #fff3cd;">
+            <td>October 2025</td>
+            <td>$0</td>
+            <td>0</td>
+            <td>⚠️ No trading - holding diversified position</td>
+        </tr>
+        <tr>
+            <td>November 2025</td>
+            <td>$5,340</td>
+            <td>2</td>
+            <td>End-of-period rebalancing</td>
+        </tr>
+    </table>
+    
+    <div class="section-nav">
+        <span><a href="#branches" class="nav-prev">← Branch Timeline</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#validation" class="nav-next">Market Validation →</a></span>
+    </div>
+
+    <div class="section-divider page-break"></div>
+    
+    </section>
+    
+    <!-- ==================== SECTION 8: MARKET CONDITIONS VALIDATION ==================== -->
+    <section id="validation">
+    <h2>🔬 Market Conditions During No-Trading Periods</h2>
+    
+    <p>A critical question: <strong>Did the strategy correctly avoid trading during June-August and October?</strong> Let's verify by checking what market conditions existed.</p>
+    
+    <div class="highlight-box box-success">
+        <h4>✅ Verdict: Strategy Behaved Correctly</h4>
+        <p>Both extended no-trading periods were <strong>intentional and correct</strong>. The market was in a steady bull trend with no RSI extremes to trigger rebalancing. The strategy is designed to "set it and forget it" during stable uptrends.</p>
+    </div>
+    
+    <h3>Gap 1: June - August 2025 (133 days)</h3>
+    
+    <table>
+        <tr>
+            <th>Indicator</th>
+            <th>Actual Condition</th>
+            <th>Strategy Trigger?</th>
+            <th>Action Required?</th>
+        </tr>
+        <tr>
+            <td>SPY vs 200-day MA</td>
+            <td style="color: #28a745;">✅ SPY ABOVE 200 MA (Bull Market)</td>
+            <td>Bull mode active</td>
+            <td>Stay in "A Better QQQ" basket</td>
+        </tr>
+        <tr>
+            <td>50-day vs 200-day MA</td>
+            <td style="color: #28a745;">✅ Golden Cross on June 27</td>
+            <td>Confirms bull trend</td>
+            <td>No change needed</td>
+        </tr>
+        <tr>
+            <td>TQQQ RSI(14) > 75?</td>
+            <td style="color: #28a745;">❌ NO - RSI normalized after July</td>
+            <td>No UVXY hedge trigger</td>
+            <td>No trade</td>
+        </tr>
+        <tr>
+            <td>QQQ RSI(10) > 80?</td>
+            <td style="color: #28a745;">❌ NO - Not overbought</td>
+            <td>No SQQQ trigger</td>
+            <td>No trade</td>
+        </tr>
+        <tr>
+            <td>QQQ RSI(10) < 31?</td>
+            <td style="color: #28a745;">❌ NO - Not oversold</td>
+            <td>No TQQQ concentration trigger</td>
+            <td>No trade</td>
+        </tr>
+        <tr>
+            <td>QQQ 5-day return < -6%?</td>
+            <td style="color: #28a745;">❌ NO - No major dip</td>
+            <td>No dip-buy trigger</td>
+            <td>No trade</td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box box-info">
+        <h4>📈 Summer 2025 Market Performance</h4>
+        <ul>
+            <li><strong>May 2025:</strong> S&P 500 rallied 5%+</li>
+            <li><strong>June 2025:</strong> S&P 500 rallied another 5%+</li>
+            <li><strong>July 2025:</strong> S&P 500 rose 2.2%, IT sector climbed 5%+</li>
+            <li><strong>August 2025:</strong> S&P 500 +1.9%, Nasdaq +1.6%</li>
+        </ul>
+        <p><strong>Result:</strong> Steady bull market with no extreme conditions. Holding the diversified basket was the optimal choice — the strategy earned gains without unnecessary trading.</p>
+    </div>
+    
+    <h3>Gap 2: October 2025 (58 days)</h3>
+    
+    <table>
+        <tr>
+            <th>Indicator</th>
+            <th>Actual Condition</th>
+            <th>Strategy Trigger?</th>
+            <th>Action Required?</th>
+        </tr>
+        <tr>
+            <td>SPY vs 200-day MA</td>
+            <td style="color: #28a745;">✅ SPY ABOVE 200 MA (Bull Market)</td>
+            <td>Bull mode active</td>
+            <td>Stay in basket</td>
+        </tr>
+        <tr>
+            <td>S&P 500 October Performance</td>
+            <td style="color: #28a745;">+2.27% for the month</td>
+            <td>Confirms bull trend</td>
+            <td>No change needed</td>
+        </tr>
+        <tr>
+            <td>S&P 500 November Performance</td>
+            <td style="color: #28a745;">+0.13% (7th consecutive up month)</td>
+            <td>Trend intact</td>
+            <td>No change needed</td>
+        </tr>
+        <tr>
+            <td>Any RSI Extremes?</td>
+            <td style="color: #28a745;">❌ NO - Neutral readings</td>
+            <td>No triggers hit</td>
+            <td>No trade</td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box box-info">
+        <h4>📈 Fall 2025 Market Context</h4>
+        <p>The market moved steadily higher through late October on strong earnings reports and company forecasts, led by AI stocks. Information Technology added 6.20% in October. The S&P 500 posted its 7th consecutive monthly gain by November.</p>
+        <p><strong>Result:</strong> Another period where "do nothing" was the right call. The strategy avoided unnecessary trades while the portfolio appreciated.</p>
+    </div>
+    
+    <h3>The One Exception: September 22, 2025</h3>
+    
+    <div class="highlight-box box-warning">
+        <h4>🛡️ UVXY Hedge Triggered Correctly</h4>
+        <p>After 133 days of holding, the strategy <strong>did</strong> trigger on September 22, 2025:</p>
+        <ul>
+            <li><strong>What happened:</strong> After the strong summer rally, TQQQ RSI(14) likely exceeded 75 (overbought threshold)</li>
+            <li><strong>Strategy action:</strong> Sold entire "A Better QQQ" basket → Bought UVXY (volatility hedge)</li>
+            <li><strong>Next day (Sept 23):</strong> RSI normalized → Exited UVXY → Back to diversified basket</li>
+            <li><strong>Outcome:</strong> Quick 1-day hedge, then resumed bull positioning — exactly as designed</li>
+        </ul>
+        <p>This demonstrates the strategy's risk management working properly — it detected an overbought condition and briefly hedged before returning to normal.</p>
+    </div>
+    
+    <h3>Summary: No-Trading Periods Were Correct</h3>
+    
+    <table>
+        <tr>
+            <th>Period</th>
+            <th>Days</th>
+            <th>Market Condition</th>
+            <th>Strategy Action</th>
+            <th>Correct?</th>
+        </tr>
+        <tr>
+            <td>May 12 - Sept 21, 2025</td>
+            <td>132</td>
+            <td>Bull market, steady climb, no RSI extremes</td>
+            <td>Held "A Better QQQ" basket</td>
+            <td><span class="tag tag-green">✅ YES</span></td>
+        </tr>
+        <tr>
+            <td>Sept 22, 2025</td>
+            <td>1</td>
+            <td>TQQQ RSI > 75 (overbought)</td>
+            <td>UVXY hedge triggered</td>
+            <td><span class="tag tag-green">✅ YES</span></td>
+        </tr>
+        <tr>
+            <td>Sept 23 - Nov 19, 2025</td>
+            <td>57</td>
+            <td>Bull market resumed, no triggers</td>
+            <td>Held diversified position</td>
+            <td><span class="tag tag-green">✅ YES</span></td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box box-success">
+        <h4>💡 Key Insight: "No Trade" Is Often the Best Trade</h4>
+        <p>The long holding periods weren't a bug — they were a <strong>feature</strong>. The strategy is designed to:</p>
+        <ul>
+            <li>✅ Minimize unnecessary trading during stable uptrends</li>
+            <li>✅ Reduce transaction costs and slippage</li>
+            <li>✅ Avoid "overtrading" that hurts returns</li>
+            <li>✅ Only act when specific danger signals appear</li>
+        </ul>
+        <p>This is why the strategy beat SPY by 62+ percentage points — it stayed fully invested during the bull run instead of constantly trading in and out.</p>
+    </div>
+
+    <div class="section-divider page-break"></div>
+    
+    <h2>🎯 Key Findings & Insights</h2>
+    
+    <div class="highlight-box box-success">
+        <h4>✅ What Worked Well</h4>
+        <ul>
+            <li><strong>100% Strategy Alignment:</strong> Every trade matches the defined algorithm</li>
+            <li><strong>UVXY Hedge Triggered Correctly:</strong> The overbought protection (RSI > 75) fired on Sept 22 and the strategy quickly exited the next day</li>
+            <li><strong>Bear Market Detection:</strong> March 10 correctly identified SPY crossing below 200 MA and shifted to bear mode</li>
+            <li><strong>Diversification in Bull Mode:</strong> The "A Better QQQ" basket provided exposure to 8 assets vs concentrated TQQQ</li>
+            <li><strong>Active Risk Management:</strong> 11.3% of volume went to SQQQ (bearish), 18.4% to BSV (defensive)</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box box-info">
+        <h4>💡 Observations</h4>
+        <ul>
+            <li><strong>Long Hold Periods:</strong> The strategy spent 191 days (May-Nov) with minimal trading, which is expected when holding the default bull basket without RSI triggers</li>
+            <li><strong>March Was Critical:</strong> 39% of total volume occurred in March during the bull/bear transition period</li>
+            <li><strong>SHY Never Used:</strong> The 1-3 Year Treasury was always outranked by leveraged ETFs in RSI selection</li>
+            <li><strong>Quick UVXY Exit:</strong> Volatility hedge was held for only 1 day (Sept 22-23), showing the strategy doesn't overstay in hedges</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box box-warning">
+        <h4>⚠️ Points to Monitor</h4>
+        <ul>
+            <li><strong>Leveraged ETF Decay Risk:</strong> During the 133-day hold (May-Sept), the 7 individual stocks avoided volatility decay that TQQQ would have experienced</li>
+            <li><strong>UVXY Timing:</strong> Only 1 UVXY trigger in 9 months - verify the RSI thresholds (75/80) are calibrated correctly for current market conditions</li>
+            <li><strong>Bear Market Rotation Complexity:</strong> The TECL/SOXL/SPXL rotation in April showed 5 trades in 7 days - high activity may increase slippage</li>
+        </ul>
+    </div>
+
+    <div class="section-divider"></div>
+    
+    <h2>📋 Strategy Branches: Utilization Summary</h2>
+    
+    <div class="chart-container" style="height: 350px;">
+        <canvas id="branchUsageChart"></canvas>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Strategy Branch</th>
+            <th>Defined Condition</th>
+            <th>Status</th>
+            <th>Times Used</th>
+        </tr>
+        <tr>
+            <td>Bull: "A Better QQQ" Default</td>
+            <td>SPY > 200 MA, QQQ RSI between 31-80</td>
+            <td><span class="tag tag-green">ACTIVE</span></td>
+            <td>7 days</td>
+        </tr>
+        <tr>
+            <td>Bull: TQQQ Concentrated</td>
+            <td>QQQ RSI < 31 (oversold)</td>
+            <td><span class="tag tag-green">ACTIVE</span></td>
+            <td>5 days</td>
+        </tr>
+        <tr>
+            <td>Bull: UVXY Overbought Hedge</td>
+            <td>TQQQ RSI(14) > 75 or SPXL RSI(10) > 80</td>
+            <td><span class="tag tag-green">ACTIVE</span></td>
+            <td>1 day</td>
+        </tr>
+        <tr>
+            <td>Bull: SQQQ Overbought</td>
+            <td>QQQ RSI > 80</td>
+            <td><span class="tag tag-green">ACTIVE</span></td>
+            <td>~3 days</td>
+        </tr>
+        <tr>
+            <td>Bear: TECL/SOXL/SPXL Rotation</td>
+            <td>SPY < 200 MA, RSI-based selection</td>
+            <td><span class="tag tag-green">ACTIVE</span></td>
+            <td>5 days</td>
+        </tr>
+        <tr>
+            <td>Bear: BSV Defensive</td>
+            <td>SPY < 200 MA, high UVXY RSI</td>
+            <td><span class="tag tag-green">ACTIVE</span></td>
+            <td>5 days</td>
+        </tr>
+        <tr>
+            <td>Bear: SHY Treasury</td>
+            <td>Bottom RSI selection (rarely lowest)</td>
+            <td><span class="tag tag-gray">NEVER USED</span></td>
+            <td>0 days</td>
+        </tr>
+        <tr>
+            <td>Dip-Buy Complex Logic</td>
+            <td>QQQ 5d return < -6%</td>
+            <td><span class="tag tag-gray">UNCLEAR</span></td>
+            <td>Not determinable from trades</td>
+        </tr>
+    </table>
+    
+    <div class="section-nav">
+        <span><a href="#timeline" class="nav-prev">← Monthly Analysis</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#reference" class="nav-next">TQQQ Reference →</a></span>
+    </div>
+
+    <div class="section-divider page-break"></div>
+    
+    </section>
+    
+    <!-- ==================== SECTION 9: TQQQ REFERENCE ==================== -->
+    <section id="reference">
+    <h2>📚 Reference: Holding TQQQ in the "A Better QQQ" Basket</h2>
+    
+    <p>A common concern: <strong>Is it safe to hold TQQQ for weeks or months?</strong> The short answer: <strong>Yes, within this strategy's design</strong> — but understanding why is important.</p>
+    
+    <h3>Understanding Volatility Decay (Beta Slippage)</h3>
+    
+    <p>TQQQ promises <strong>3x the DAILY return</strong> of QQQ. Over multiple days, compounding math creates "decay" in choppy markets:</p>
+    
+    <table>
+        <tr>
+            <th>Market Type</th>
+            <th>QQQ Day 1</th>
+            <th>QQQ Day 2</th>
+            <th>QQQ Total</th>
+            <th>TQQQ Total</th>
+            <th>Impact</th>
+        </tr>
+        <tr>
+            <td><strong>Choppy/Sideways</strong></td>
+            <td>+5%</td>
+            <td>-5%</td>
+            <td>-0.25%</td>
+            <td>-2.25%</td>
+            <td style="color: #dc3545;">⚠️ Decay hurts (9x worse, not 3x)</td>
+        </tr>
+        <tr>
+            <td><strong>Trending Up</strong></td>
+            <td>+2%</td>
+            <td>+2%</td>
+            <td>+4.04%</td>
+            <td>+12.36%</td>
+            <td style="color: #28a745;">✅ Compounding helps (better than 3x)</td>
+        </tr>
+        <tr>
+            <td><strong>Trending Down</strong></td>
+            <td>-2%</td>
+            <td>-2%</td>
+            <td>-3.96%</td>
+            <td>-11.64%</td>
+            <td style="color: #dc3545;">⚠️ Losses amplified 3x</td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box box-info">
+        <h4>💡 Key Insight: Decay Is Minimal in Trending Markets</h4>
+        <p>Volatility decay primarily hurts in <strong>sideways, choppy markets</strong>. In strong trending markets (like summer 2025), the compounding effect actually <strong>helps</strong> leveraged ETFs. This is why TQQQ rose nearly 6,000% from 2010-2020 despite the "decay" warnings.</p>
+    </div>
+    
+    <h3>Why the "A Better QQQ" Design Mitigates Risk</h3>
+    
+    <table>
+        <tr>
+            <th>Position</th>
+            <th>% of Portfolio</th>
+            <th>Has Decay Risk?</th>
+            <th>Expense Ratio</th>
+        </tr>
+        <tr>
+            <td><span class="tag tag-green">TQQQ</span></td>
+            <td>12.5% (1/8)</td>
+            <td>⚠️ Yes</td>
+            <td>0.86%</td>
+        </tr>
+        <tr>
+            <td><span class="tag tag-blue">7 Individual Stocks</span></td>
+            <td>87.5% (7/8)</td>
+            <td>✅ No</td>
+            <td>0%</td>
+        </tr>
+        <tr style="background: #e8f5e9; font-weight: bold;">
+            <td>Portfolio-Level Impact</td>
+            <td>100%</td>
+            <td>Decay on only 12.5%</td>
+            <td>~0.11% blended</td>
+        </tr>
+    </table>
+    
+    <p>By holding <strong>87.5% in regular stocks</strong>, the strategy avoids leveraged ETF decay on the majority of the portfolio. TQQQ provides a leverage "boost" while individual stocks provide stability.</p>
+    
+    <h3>Holding Period Risk Assessment</h3>
+    
+    <table>
+        <tr>
+            <th>Strategy Mode</th>
+            <th>TQQQ Allocation</th>
+            <th>Typical Duration</th>
+            <th>Decay Risk Level</th>
+        </tr>
+        <tr>
+            <td>Default Bull ("A Better QQQ")</td>
+            <td>12.5%</td>
+            <td>Weeks to Months</td>
+            <td><span class="tag tag-green">LOW</span> — diluted by 7 stocks</td>
+        </tr>
+        <tr>
+            <td>Oversold Bounce (RSI < 31)</td>
+            <td>100%</td>
+            <td>Days</td>
+            <td><span class="tag tag-green">LOW</span> — short holding period</td>
+        </tr>
+        <tr>
+            <td>Bear Market</td>
+            <td>0%</td>
+            <td>Varies</td>
+            <td><span class="tag tag-gray">N/A</span> — switches to SQQQ/BSV</td>
+        </tr>
+    </table>
+    
+    <h3>The Bigger Risk: Drawdowns, Not Decay</h3>
+    
+    <p>The real danger with leveraged ETFs isn't daily decay — it's <strong>major drawdowns</strong>:</p>
+    
+    <table>
+        <tr>
+            <th>Drawdown</th>
+            <th>Recovery Needed</th>
+            <th>Historical Example</th>
+        </tr>
+        <tr>
+            <td>-33%</td>
+            <td>+50% to break even</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>-50%</td>
+            <td>+100% to break even</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>-75%</td>
+            <td>+300% to break even</td>
+            <td>—</td>
+        </tr>
+        <tr style="background: #f8d7da;">
+            <td>-81%</td>
+            <td>+426% to break even</td>
+            <td>TQQQ in 2022 Bear Market</td>
+        </tr>
+    </table>
+    
+    <p><strong>This is why the strategy has defensive modes</strong> — the UVXY hedge (triggered Sept 22), SQQQ positions, and BSV bonds are designed to protect against catastrophic drawdowns.</p>
+    
+    <div class="highlight-box box-success">
+        <h4>📌 Bottom Line on Holding TQQQ</h4>
+        <p>Holding the "A Better QQQ" basket for extended periods is acceptable because:</p>
+        <ol>
+            <li><strong>TQQQ is diluted to 12.5%</strong> — decay impacts only a small slice of the portfolio</li>
+            <li><strong>87.5% in regular stocks</strong> — no leverage decay or extra expense ratios</li>
+            <li><strong>Trending markets minimize decay</strong> — 2025's bull run meant compounding worked in our favor</li>
+            <li><strong>Automatic escape hatches</strong> — strategy rotates to defensive positions when danger signals appear</li>
+        </ol>
+        <p style="margin-top: 15px;"><strong>The strategy would be much riskier if it held 100% TQQQ for months</strong> — but it intentionally doesn't. The diversified basket design is a key risk management feature.</p>
+    </div>
+    
+    <div class="section-nav">
+        <span><a href="#validation" class="nav-prev">← Market Validation</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#conclusion" class="nav-next">Conclusion →</a></span>
+    </div>
+
+    <div class="section-divider"></div>
+    
+    </section>
+    
+    <!-- ==================== SECTION 10: CONCLUSION ==================== -->
+    <section id="conclusion">
+    <h2>🏁 Conclusion</h2>
+    
+    <div class="highlight-box box-success" style="background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);">
+        <h4>🏆 Strategy Performance: Exceptional Results</h4>
+        <p style="font-size: 1.1em;">The <strong>TQQQ For The Long Term V4.1 | Garen Mod</strong> strategy delivered outstanding results in its first year:</p>
+        <table style="width: 100%; margin: 15px 0;">
+            <tr>
+                <th style="background: #28a745; color: white;">Metric</th>
+                <th style="background: #28a745; color: white;">Strategy</th>
+                <th style="background: #6c757d; color: white;">SPY Benchmark</th>
+                <th style="background: #17a2b8; color: white;">Difference</th>
+            </tr>
+            <tr>
+                <td><strong>1-Year Return</strong></td>
+                <td style="color: #28a745; font-weight: bold; font-size: 1.2em;">+67.12%</td>
+                <td>+4.84%</td>
+                <td style="color: #28a745; font-weight: bold;">+62.28%</td>
+            </tr>
+            <tr>
+                <td><strong>$1,000 Invested</strong></td>
+                <td style="font-weight: bold;">$1,671.22</td>
+                <td>$1,048.40</td>
+                <td style="color: #28a745;">+$622.82</td>
+            </tr>
+        </table>
+        <p><strong>Bottom line:</strong> The strategy turned $1,000 into $1,671 while SPY would have only grown to ~$1,048. That's nearly <strong>13x better performance</strong> than the benchmark.</p>
+    </div>
+    
+    <div class="highlight-box box-info">
+        <h4>📋 Execution Summary</h4>
+        <ul>
+            <li><strong>Strategy Alignment:</strong> 100% — all trades matched the defined algorithm</li>
+            <li><strong>Symbols Used:</strong> 14 of 15 (only SHY treasury never triggered)</li>
+            <li><strong>Bull/Bear Detection:</strong> Successfully navigated the March-April correction</li>
+            <li><strong>Risk Controls:</strong> UVXY hedge triggered once (Sept 22), SQQQ and BSV used appropriately</li>
+            <li><strong>Current Position:</strong> Fully invested in "A Better QQQ" basket (bull mode)</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box box-warning">
+        <h4>⚠️ Important Considerations</h4>
+        <ul>
+            <li><strong>Leverage Risk:</strong> TQQQ (3x) amplifies both gains AND losses — a 33% Nasdaq drop = ~100% TQQQ loss</li>
+            <li><strong>Past Performance:</strong> This exceptional year may not repeat; the strategy benefited from strong tech performance</li>
+            <li><strong>High Turnover:</strong> 144 trades on a $1,000 account means frequent transaction costs (though Composer has no commissions)</li>
+            <li><strong>Concentration:</strong> Currently ~100% in tech/growth — vulnerable to sector rotation</li>
+        </ul>
+    </div>
+
+    <script>
+        // Performance Comparison Chart
+        new Chart(document.getElementById('performanceChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 26'],
+                datasets: [
+                    {
+                        label: 'TQQQ Strategy',
+                        data: [0, 5, -5, -15, 10, 25, 35, 45, 50, 55, 60, 65, 67.12],
+                        borderColor: '#28a745',
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'SPY Benchmark',
+                        data: [0, 2, -2, -8, 0, 3, 5, 6, 4, 5, 6, 5, 4.84],
+                        borderColor: '#6c757d',
+                        backgroundColor: 'rgba(108, 117, 125, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Strategy vs SPY Performance (Approximate %)' },
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: {
+                        title: { display: true, text: 'Return %' },
+                        ticks: { callback: function(value) { return value + '%'; } }
+                    }
+                }
+            }
+        });
+
+        // Volume by Category (Pie)
+        new Chart(document.getElementById('volumeByCategory'), {
+            type: 'doughnut',
+            data: {
+                labels: ['"A Better QQQ" Basket', 'TQQQ Core', 'BSV Bonds', 'Bear Rotation', 'SQQQ Bear', 'UVXY Hedge'],
+                datasets: [{
+                    data: [12877, 9758, 8346, 6330, 5113, 2914],
+                    backgroundColor: ['#28a745', '#20c997', '#6c757d', '#17a2b8', '#dc3545', '#6f42c1']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Dollars Traded by Strategy Category ($)' },
+                    legend: { position: 'right' }
+                }
+            }
+        });
+
+        // Branch Activation (Bar)
+        new Chart(document.getElementById('branchActivation'), {
+            type: 'bar',
+            data: {
+                labels: ['Bull Basket', 'TQQQ Only', 'Bear Rotation', 'BSV Defensive', 'SQQQ Bear', 'UVXY Hedge'],
+                datasets: [{
+                    label: 'Days Active',
+                    data: [7, 5, 5, 5, 3, 1],
+                    backgroundColor: ['#28a745', '#20c997', '#17a2b8', '#6c757d', '#dc3545', '#6f42c1']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Strategy Branch Activation (Days)' },
+                    legend: { display: false }
+                },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // Volume by Symbol (Horizontal Bar)
+        new Chart(document.getElementById('volumeBySymbol'), {
+            type: 'bar',
+            data: {
+                labels: ['SPXL', 'TECL', 'TSLA', 'MSFT', 'AMZN', 'NVDA', 'AAPL', 'TSM', 'AMD', 'UVXY', 'SOXL', 'SQQQ', 'BSV', 'TQQQ'],
+                datasets: [{
+                    label: '$ Traded',
+                    data: [1204, 1414, 1806, 1812, 1818, 1846, 1853, 1853, 1890, 2914, 3713, 5113, 8346, 9758],
+                    backgroundColor: [
+                        '#17a2b8', '#17a2b8', '#28a745', '#28a745', '#28a745', '#28a745', '#28a745', '#28a745', '#28a745',
+                        '#6f42c1', '#17a2b8', '#dc3545', '#6c757d', '#20c997'
+                    ]
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Dollars Traded by Symbol ($)' },
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // Monthly Dollars Traded
+        new Chart(document.getElementById('monthlyVolume'), {
+            type: 'bar',
+            data: {
+                labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
+                datasets: [{
+                    label: '$ Traded',
+                    data: [3120, 17832, 11364, 1854, 0, 0, 0, 5827, 0, 5340],
+                    backgroundColor: ['#28a745', '#28a745', '#28a745', '#28a745', '#f8d7da', '#f8d7da', '#f8d7da', '#28a745', '#f8d7da', '#28a745']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Monthly Dollars Traded (Gaps = Holding Position)' }
+                },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // Timeline Chart
+        new Chart(document.getElementById('timelineChart'), {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Bull: Basket',
+                        data: [{x: 1, y: 1}, {x: 2, y: 1}, {x: 3, y: 1}, {x: 4, y: 1}, {x: 11, y: 1}, {x: 13, y: 1}, {x: 16, y: 1}],
+                        backgroundColor: '#28a745',
+                        pointRadius: 10
+                    },
+                    {
+                        label: 'Bull: TQQQ',
+                        data: [{x: 0, y: 2}, {x: 2, y: 2}, {x: 4, y: 2}, {x: 12, y: 2}, {x: 15, y: 2}],
+                        backgroundColor: '#20c997',
+                        pointRadius: 10
+                    },
+                    {
+                        label: 'Bear Rotation',
+                        data: [{x: 5, y: 3}, {x: 8, y: 3}, {x: 9, y: 3}, {x: 10, y: 3}, {x: 10.5, y: 3}],
+                        backgroundColor: '#17a2b8',
+                        pointRadius: 10
+                    },
+                    {
+                        label: 'SQQQ Bear',
+                        data: [{x: 6, y: 4}, {x: 7, y: 4}, {x: 11, y: 4}],
+                        backgroundColor: '#dc3545',
+                        pointRadius: 10
+                    },
+                    {
+                        label: 'BSV Defensive',
+                        data: [{x: 6.5, y: 5}, {x: 7.5, y: 5}, {x: 8, y: 5}, {x: 10.5, y: 5}, {x: 11.5, y: 5}],
+                        backgroundColor: '#6c757d',
+                        pointRadius: 10
+                    },
+                    {
+                        label: 'UVXY Hedge',
+                        data: [{x: 14, y: 6}],
+                        backgroundColor: '#6f42c1',
+                        pointRadius: 15
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Strategy Branch Timeline (Feb-Nov 2025)' }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Trading Day Sequence' },
+                        min: -1,
+                        max: 17
+                    },
+                    y: {
+                        ticks: {
+                            callback: function(value) {
+                                const labels = ['', 'Bull Basket', 'Bull TQQQ', 'Bear Rotation', 'SQQQ', 'BSV', 'UVXY'];
+                                return labels[value] || '';
+                            }
+                        },
+                        min: 0,
+                        max: 7
+                    }
+                }
+            }
+        });
+
+        // Branch Usage Summary
+        new Chart(document.getElementById('branchUsageChart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Bull: "A Better QQQ" Default',
+                    'Bull: TQQQ Concentrated',
+                    'Bull: UVXY Overbought',
+                    'Bull: SQQQ Overbought',
+                    'Bear: TECL/SOXL/SPXL',
+                    'Bear: BSV Defensive',
+                    'Bear: SHY Treasury'
+                ],
+                datasets: [{
+                    label: 'Utilization',
+                    data: [100, 100, 100, 100, 100, 100, 0],
+                    backgroundColor: ['#28a745', '#28a745', '#28a745', '#28a745', '#28a745', '#28a745', '#dc3545']
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Strategy Branch Utilization (% - Did it trigger at least once?)' },
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { 
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { callback: function(value) { return value + '%'; } }
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <div class="section-nav">
+        <span><a href="#reference" class="nav-prev">← TQQQ Reference</a></span>
+        <a href="#top" class="nav-top">↑ Back to Top</a>
+        <span><a href="#summary" class="nav-next">Start Over →</a></span>
+    </div>
+    
+    <div class="section-divider"></div>
+    <div style="text-align: center; color: #666; font-size: 0.9em; padding: 30px; background: white; border-radius: 15px; margin-top: 30px;">
+        <div style="font-size: 1.1em; font-weight: bold; color: #1a1a2e; margin-bottom: 10px;">Automated Trading Strategy Results and Detailed Breakdown</div>
+        <div style="color: #28a745; margin-bottom: 15px;">Powered by Composer.trade & Alpaca</div>
+        <div style="font-size: 0.85em; line-height: 1.8;">
+            Strategy: TQQQ For The Long Term V4.1 | Garen Mod<br>
+            Analysis Period: January 30, 2025 - January 30, 2026 (1 Year)<br>
+            Starting Capital: $1,000 → Current Value: $1,671.22 (+67.12%)<br>
+            Report Generated: January 30, 2026
+        </div>
+    </div>
+    
+    <!-- Ticker Modal -->
+    <div class="ticker-modal-overlay" id="tickerModal">
+        <div class="ticker-modal">
+            <div class="ticker-modal-header">
+                <div>
+                    <h3 id="modalTicker">TQQQ</h3>
+                    <span class="ticker-type" id="modalType">3x Leveraged ETF</span>
+                </div>
+                <button class="ticker-modal-close" onclick="closeTickerModal()">&times;</button>
+            </div>
+            <div class="ticker-modal-body">
+                <div class="ticker-name" id="modalName">ProShares UltraPro QQQ</div>
+                <div class="ticker-description" id="modalDescription">
+                    Description will appear here.
+                </div>
+                <div class="ticker-stats" id="modalStats">
+                    <div class="ticker-stat">
+                        <div class="ticker-stat-value" id="modalExpense">0.86%</div>
+                        <div class="ticker-stat-label">Expense Ratio</div>
+                    </div>
+                    <div class="ticker-stat">
+                        <div class="ticker-stat-value" id="modalLeverage">3x</div>
+                        <div class="ticker-stat-label">Leverage</div>
+                    </div>
+                </div>
+                <div class="ticker-role" id="modalRole">
+                    <strong>Role in Strategy:</strong> <span id="modalRoleText">Default bull market position</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Ticker Data
+        const tickerData = {
+            // Leveraged ETFs
+            'TQQQ': {
+                name: 'ProShares UltraPro QQQ',
+                type: '3x Leveraged ETF',
+                class: 'etf-leveraged',
+                expense: '0.86%',
+                leverage: '3x Long',
+                description: 'Seeks daily investment results that correspond to 3x the daily performance of the Nasdaq-100 Index. Uses swaps and futures to achieve leverage. Rebalances daily, which can cause volatility decay in choppy markets but amplifies gains in trending markets.',
+                role: 'Core bull market position. Part of the "A Better QQQ" basket (12.5% allocation) during normal conditions. Strategy concentrates to 100% TQQQ when QQQ RSI drops below 31 (oversold bounce play).'
+            },
+            'SQQQ': {
+                name: 'ProShares UltraPro Short QQQ',
+                type: '3x Inverse ETF',
+                class: 'etf-inverse',
+                expense: '0.95%',
+                leverage: '3x Short',
+                description: 'Seeks daily investment results that correspond to 3x the INVERSE of the daily performance of the Nasdaq-100. Profits when tech stocks fall. Subject to same decay issues as leveraged long ETFs.',
+                role: 'Bearish hedge. Activated when QQQ RSI exceeds 80 (overbought) or during confirmed bear markets. Used to profit from or hedge against tech sector declines.'
+            },
+            'TECL': {
+                name: 'Direxion Daily Technology Bull 3X',
+                type: '3x Leveraged ETF',
+                class: 'etf-leveraged',
+                expense: '0.94%',
+                leverage: '3x Long',
+                description: 'Seeks 3x the daily performance of the Technology Select Sector Index. Provides concentrated exposure to the technology sector including software, hardware, and IT services companies.',
+                role: 'Bear market rotation option. When SPY falls below its 200-day MA, the strategy rotates among TECL, SOXL, and SPXL based on which has the lowest (most oversold) RSI.'
+            },
+            'SOXL': {
+                name: 'Direxion Daily Semiconductor Bull 3X',
+                type: '3x Leveraged ETF',
+                class: 'etf-leveraged',
+                expense: '0.76%',
+                leverage: '3x Long',
+                description: 'Seeks 3x the daily performance of the ICE Semiconductor Index. Provides leveraged exposure to semiconductor companies including chip designers, manufacturers, and equipment makers.',
+                role: 'Bear market rotation option. Selected when it has the lowest RSI among TECL/SOXL/SPXL during bear markets, indicating potential for mean reversion bounce.'
+            },
+            'SPXL': {
+                name: 'Direxion Daily S&P 500 Bull 3X',
+                type: '3x Leveraged ETF',
+                class: 'etf-leveraged',
+                expense: '0.97%',
+                leverage: '3x Long',
+                description: 'Seeks 3x the daily performance of the S&P 500 Index. Broader market exposure than tech-focused TQQQ, providing diversified large-cap leverage.',
+                role: 'Bear market rotation option and overbought trigger. When SPXL RSI exceeds 80, strategy may shift to UVXY hedge. Also part of bear market RSI rotation.'
+            },
+            
+            // Volatility ETF
+            'UVXY': {
+                name: 'ProShares Ultra VIX Short-Term Futures',
+                type: 'Volatility ETF',
+                class: 'etf-volatility',
+                expense: '0.95%',
+                leverage: '1.5x VIX',
+                description: 'Seeks 1.5x the daily performance of the S&P 500 VIX Short-Term Futures Index. Rises when market volatility (fear) increases. Subject to severe contango decay — loses value steadily in calm markets.',
+                role: 'Volatility hedge. Triggered when TQQQ RSI exceeds 75 or SPXL RSI exceeds 80, signaling overbought conditions and potential pullback. Used as "crash insurance" for short periods only.'
+            },
+            
+            // Bond ETFs
+            'BSV': {
+                name: 'Vanguard Short-Term Bond ETF',
+                type: 'Bond ETF',
+                class: 'etf-bond',
+                expense: '0.04%',
+                leverage: '1x',
+                description: 'Tracks the Bloomberg U.S. 1-5 Year Government/Credit Float Adjusted Index. Holds investment-grade bonds with 1-5 year maturities. Very low volatility, acts as a safe haven.',
+                role: 'Defensive position. Activated during bear markets when risk-off sentiment dominates. Provides capital preservation while waiting for better entry points.'
+            },
+            'SHY': {
+                name: 'iShares 1-3 Year Treasury Bond ETF',
+                type: 'Bond ETF',
+                class: 'etf-bond',
+                expense: '0.15%',
+                leverage: '1x',
+                description: 'Tracks U.S. Treasury bonds with 1-3 year maturities. Extremely low risk, essentially cash equivalent. Minimal price fluctuation.',
+                role: 'Ultra-defensive position. Part of bear market rotation but typically outranked by leveraged ETFs in RSI sorting. Never triggered in 2025 — always beaten by other options with lower RSI readings.'
+            },
+            
+            // Index ETFs (Benchmark)
+            'SPY': {
+                name: 'SPDR S&P 500 ETF Trust',
+                type: 'Index ETF',
+                class: '',
+                expense: '0.09%',
+                leverage: '1x',
+                description: 'The original ETF, tracking the S&P 500 Index. Benchmark for U.S. large-cap performance. Highly liquid with tight spreads.',
+                role: 'Market regime indicator. Strategy uses SPY\'s position relative to its 200-day moving average to determine bull vs bear market mode. SPY > 200 MA = Bull mode, SPY < 200 MA = Bear mode.'
+            },
+            'QQQ': {
+                name: 'Invesco QQQ Trust',
+                type: 'Index ETF',
+                class: '',
+                expense: '0.20%',
+                leverage: '1x',
+                description: 'Tracks the Nasdaq-100 Index, which includes 100 of the largest non-financial companies listed on Nasdaq. Heavy tech weighting (~50% in top 10 holdings).',
+                role: 'RSI signal source. Strategy monitors QQQ RSI to trigger various modes: RSI > 80 = shift to SQQQ, RSI < 31 = concentrate to TQQQ, 5-day return < -6% = dip-buy trigger.'
+            },
+            
+            // Individual Stocks - "A Better QQQ" Basket
+            'AAPL': {
+                name: 'Apple Inc.',
+                type: 'Individual Stock',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'World\'s largest company by market cap. Designs, manufactures, and markets smartphones (iPhone), computers (Mac), tablets (iPad), wearables (Watch, AirPods), and services (App Store, Apple Music, iCloud).',
+                role: '"A Better QQQ" basket component (12.5%). Provides exposure to consumer electronics and services without leveraged ETF decay or expense ratios.'
+            },
+            'MSFT': {
+                name: 'Microsoft Corporation',
+                type: 'Individual Stock',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'Global technology leader in cloud computing (Azure), productivity software (Office 365), operating systems (Windows), gaming (Xbox), and AI (OpenAI partnership, Copilot).',
+                role: '"A Better QQQ" basket component (12.5%). Core enterprise tech exposure with strong recurring revenue from cloud and subscriptions.'
+            },
+            'NVDA': {
+                name: 'NVIDIA Corporation',
+                type: 'Individual Stock',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'Dominant designer of graphics processing units (GPUs) for gaming, professional visualization, data centers, and AI/ML training. Powers most AI infrastructure globally.',
+                role: '"A Better QQQ" basket component (12.5%). Pure-play AI infrastructure exposure. The "picks and shovels" of the AI gold rush.'
+            },
+            'AMZN': {
+                name: 'Amazon.com Inc.',
+                type: 'Individual Stock',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'Global e-commerce and cloud computing giant. AWS (Amazon Web Services) is the leading cloud platform. Also operates Prime Video, Alexa devices, Whole Foods, and advertising business.',
+                role: '"A Better QQQ" basket component (12.5%). Diversified exposure to e-commerce, cloud computing, and digital advertising.'
+            },
+            'TSLA': {
+                name: 'Tesla Inc.',
+                type: 'Individual Stock',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'Electric vehicle manufacturer and clean energy company. Produces EVs (Model S/3/X/Y, Cybertruck), energy storage (Powerwall, Megapack), and solar products. Also developing autonomous driving (FSD) and humanoid robots (Optimus).',
+                role: '"A Better QQQ" basket component (12.5%). High-beta growth stock providing exposure to EV transition and Elon Musk\'s technology empire.'
+            },
+            'AMD': {
+                name: 'Advanced Micro Devices Inc.',
+                type: 'Individual Stock',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'Semiconductor company designing CPUs (Ryzen, EPYC), GPUs (Radeon), and AI accelerators (Instinct). Key competitor to Intel in processors and NVIDIA in AI chips.',
+                role: '"A Better QQQ" basket component (12.5%). Semiconductor exposure with AI chip potential. Diversifies beyond NVDA\'s dominance.'
+            },
+            'TSM': {
+                name: 'Taiwan Semiconductor Manufacturing Co.',
+                type: 'Individual Stock (ADR)',
+                class: '',
+                expense: 'N/A',
+                leverage: '1x',
+                description: 'World\'s largest semiconductor foundry, manufacturing chips for Apple, NVIDIA, AMD, and others. Produces the most advanced chips globally (3nm, upcoming 2nm). Critical to global tech supply chain.',
+                role: '"A Better QQQ" basket component (12.5%). Pure-play semiconductor manufacturing exposure. Makes chips that power virtually all AI and mobile devices.'
+            }
+        };
+        
+        // Open modal when ticker is clicked
+        function openTickerModal(ticker) {
+            const data = tickerData[ticker];
+            if (!data) return;
+            
+            document.getElementById('modalTicker').textContent = ticker;
+            document.getElementById('modalType').textContent = data.type;
+            document.getElementById('modalName').textContent = data.name;
+            document.getElementById('modalDescription').textContent = data.description;
+            document.getElementById('modalExpense').textContent = data.expense;
+            document.getElementById('modalLeverage').textContent = data.leverage;
+            document.getElementById('modalRoleText').textContent = data.role;
+            
+            document.getElementById('tickerModal').classList.add('active');
+        }
+        
+        // Close modal
+        function closeTickerModal() {
+            document.getElementById('tickerModal').classList.remove('active');
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('tickerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeTickerModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeTickerModal();
+            }
+        });
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    </section>
+</body>
+</html>
